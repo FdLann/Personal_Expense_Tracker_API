@@ -161,7 +161,6 @@ Struktur ini memudahkan scaling dan maintenance.
 
 ## 🔮 Future Improvements
 
-- 🔐 Request validation (Joi / Zod)
 - 🔑 Authentication (JWT)
 - 📄 Pagination
 - 📈 Monthly report
