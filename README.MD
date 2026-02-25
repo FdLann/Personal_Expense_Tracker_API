@@ -29,8 +29,8 @@ Dibangun menggunakan **Node.js**, **Express.js**, dan **MySQL** dengan arsitektu
 ### 1️⃣ Clone Repository
 
 ```bash
-git clone https://github.com/username_kamu/expense-tracker-api.git
-cd expense-tracker-api
+git clone https://github.com/FdLann/Personal_Expense_Tracker_API.git
+cd Personal_Expense_Tracker_API
 ```
 
 ### 2️⃣ Install Dependencies
