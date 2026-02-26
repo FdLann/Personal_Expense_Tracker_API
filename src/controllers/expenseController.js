@@ -5,7 +5,7 @@ export const getAllExpenses = async (req, res) => {
     const data = await expenseService.getData();
     res.status(200).json(data);
   } catch (error) {
-    res.status(500).json({ message: "Server Error", error });
+    next(error);
   }
 };
 
@@ -14,7 +14,7 @@ export const createExpense = async (req, res) => {
     await expenseService.createData(req.body);
     res.status(201).json({ message: "Transaksi Berhasil Dicatat!" });
   } catch (error) {
-    res.status(500).json({ message: "Gagal menambah data", error });
+    next(error);
   }
 };
 
@@ -27,9 +27,7 @@ export const deleteExpense = async (req, res) => {
     }
     res.status(200).json({ message: "data berhasil dihapus" });
   } catch (error) {
-    res
-      .status(500)
-      .json({ message: "Gagal Menghapus Data", error: error.message });
+    next(error);
   }
 };
 
@@ -44,8 +42,7 @@ export const updateDataExpense = async (req, res) => {
     }
     res.status(200).json({ message: "Data Berhasil Di Update", data: result });
   } catch (error) {
-    const status = error.message === "All fields are required" ? 400 : 500;
-    res.status(status).json({ message: error.message });
+    next(error);
   }
 };
 
@@ -57,9 +54,6 @@ export const getExpenseSummary = async (req, res) => {
       data: summary,
     });
   } catch (error) {
-    res.status(500).json({
-      message: "Gagal mengambil ringkasan data",
-      error: error.message,
-    });
+    next(error);
   }
 };
